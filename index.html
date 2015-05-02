@@ -6,23 +6,22 @@
   <script src="node_modules/angular/angular.min.js"></script>
 </head>
 
-<body data-ng-controller="ConversorController">
+<body ng-controller="ConversorController">
   <h1>Conversor <small>AngularJS</small></h1>
   
   <div class="container">
     <form>
       <div>
         <label for="millas">Millas</label> 
-        <input name="millas" ng-model="millas"
+        <input type="number" name="millas" 
+          ng-model="conversor.millas"
+          ng-model-options="{ debounce: 500  }"
           placeholder="Ingrese la cantidad de millas a convertir"
           autofocus="autofocus">
-        <button data-ng-click="convertir()">
-          Convertir
-        </button>
       </div>
       <div>
         <label for="kilometros">Kilometros</label>
-        <span>{{kilometros}}</span>
+        <span>{{conversor.kilometros()}}</span>
       </div>
     </form>
   </div>

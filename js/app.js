@@ -2,8 +2,6 @@
 
 var app = angular.module('conversorApp', [])
 
-
-
 /* Controllers */
 app.controller('ConversorController', function ($scope) {
 	/* scope */
@@ -11,6 +9,7 @@ app.controller('ConversorController', function ($scope) {
 	$scope.kilometros = ' <ingrese millas> '
 		
 	$scope.convertir = function() {
+		console.log($scope)
 		$scope.kilometros = $scope.millas * 1.60934
 	}
 });

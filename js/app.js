@@ -9,8 +9,9 @@ app.controller('ConversorController', function ($scope) {
   
 function Conversor()  {
 	this.millas = 0;
-	this.kilometros = function() {
-		return this.millas * 1.60934
+	this.kilometros = '';
+	this.convertir = function() {
+		this.kilometros =  this.millas * 1.60934
 	}	
 }
   

@@ -3,24 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Example - example-guide-concepts-1-production</title>
+
+  <!-- JQUERY -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- ANGULAR -->
   <script src="node_modules/angular/angular.min.js"></script>
+
+  <link rel="stylesheet" href="css/conversor.css">
+
 </head>
 
-<body ng-controller="ConversorController">
-  <h1>Conversor <small>AngularJS</small></h1>
-  
+<body ng-controller="ConversorController">  
   <div class="container">
-    <form>
-      <div>
+    <div class="page-header">
+      <h1>Conversor <small>AngularJS</small></h1>
+    </div>
+
+    <form class="well well-lg form-inline">
+      <div class="form-group">
         <label for="millas">Millas</label> 
-        <input type="number" name="millas" 
+        <input type="number" name="millas" class="form-control"
           ng-model="conversor.millas"
           placeholder="Ingrese la cantidad de millas a convertir"
           autofocus="autofocus">
+        <button type="submit" ng-click="conversor.convertir()" 
+          class="btn btn-primary">
+          Convertir
+        </button>
       </div>
-      <div>
-        <label for="kilometros">Kilometros</label>
-        <span>{{conversor.kilometros()}}</span>
+      <div class="form-group">
+        <span id="kilometros" class="lead">{{conversor.kilometros}} kilómetros</span>
       </div>
     </form>
   </div>

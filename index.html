@@ -25,20 +25,32 @@
       <h1>Conversor <small>AngularJS</small></h1>
     </div>
 
-    <form class="well well-lg form-inline">
+    <form name="conversorForm" class="well well-lg" novalidate>
       <div class="form-group">
         <label for="millas">Millas</label> 
         <input type="number" name="millas" class="form-control"
           ng-model="conversor.millas"
           placeholder="Ingrese la cantidad de millas a convertir"
-          autofocus="autofocus">
+          autofocus
+          required
+        >
+      </div>
+      <div ng-show="conversorForm.$submitted || conversorForm.millas.$dirty">
+        <div class="alert alert-danger" ng-show="conversorForm.millas.$error.required">
+          Por favor ingrese la cantidad de millas a convertir.
+        </div>
+        <div class="alert alert-danger" ng-show="conversorForm.millas.$error.number">
+          Por favor ingrese un valor numérico.
+        </div>
+      </div>
+      <div class="form-group">
         <button type="submit" ng-click="conversor.convertir()" 
           class="btn btn-primary">
           Convertir
         </button>
-      </div>
-      <div class="form-group">
-        <span id="kilometros" class="lead">{{conversor.kilometros}} kilómetros</span>
+        <span id="kilometros" class="lead" ng-show="conversor.isValid()">
+          {{conversor.kilometros}} kilometros
+        </span>
       </div>
     </form>
   </div>

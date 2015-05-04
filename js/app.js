@@ -8,7 +8,7 @@ app.controller('ConversorController', function ($scope) {
 });
   
 function Conversor()  {
-	this.millas = '';
+	this.millas = NaN;
 	this.kilometros = NaN;
 	this.convertir = function() {
 		this.kilometros =  this.millas * 1.60934

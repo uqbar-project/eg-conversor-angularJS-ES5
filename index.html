@@ -49,7 +49,7 @@
           Convertir
         </button>
         <span id="kilometros" class="lead" ng-show="conversor.isValid()">
-          {{conversor.kilometros}} kilometros
+          {{conversor.kilometros | number:2}} kilometros
         </span>
       </div>
     </form>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es" ng-app="conversorApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-guide-concepts-1-production</title>
+
+  <!-- JQUERY -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- ANGULAR -->
+  <script src="node_modules/angular/angular.min.js"></script>
+
+  <link rel="stylesheet" href="css/conversor.css">
+
+</head>
+
+<body ng-controller="ConversorController">  
+  <div class="container">
+    <div class="page-header">
+      <h1>Conversor <small>AngularJS</small></h1>
+    </div>
+
+    <form name="conversorForm" class="well well-lg" novalidate>
+      <div class="form-group">
+        <label for="millas">Millas</label> 
+        <input type="number" name="millas" class="form-control"
+          ng-model="conversor.millas"
+          placeholder="Ingrese la cantidad de millas a convertir"
+          autofocus
+          required
+        >
+      </div>
+      <div ng-show="conversorForm.$submitted || conversorForm.millas.$dirty">
+        <div class="alert alert-danger" ng-show="conversorForm.millas.$error.required">
+          Por favor ingrese la cantidad de millas a convertir.
+        </div>
+        <div class="alert alert-danger" ng-show="conversorForm.millas.$error.number">
+          Por favor ingrese un valor numérico.
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" ng-click="conversor.convertir()" 
+          class="btn btn-primary">
+          Convertir
+        </button>
+        <span id="kilometros" class="lead" ng-show="conversor.isValid()">
+          {{conversor.kilometros | number:2}} kilometros
+        </span>
+      </div>
+    </form>
+  </div>
+
+  <!-- nuestro jscript -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

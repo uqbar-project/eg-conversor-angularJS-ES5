@@ -19,7 +19,7 @@
 
 </head>
 
-<body ng-controller="ConversorController">  
+<body ng-controller="ConversorController as conversor">  
   <div class="container">
     <div class="page-header">
       <h1>Conversor <small>AngularJS</small></h1>
@@ -49,7 +49,7 @@
           Convertir
         </button>
         <span id="kilometros" class="lead" ng-show="conversor.isValid()">
-          {{conversor.kilometros | number:2}} kilometros
+          {{conversor.kilometros | number:2}} kilómetros
         </span>
       </div>
     </form>

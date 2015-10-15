@@ -20,9 +20,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.uqbar-project</groupId>
+			<groupId>org.uqbar</groupId>
 			<artifactId>xtrest</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.1.4</version>
 		</dependency>
 	</dependencies>
 </project>

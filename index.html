@@ -23,7 +23,7 @@
 
 </head>
 
-<body data-ng-controller="ConversorController">
+<body ng-controller="conversorCtrl as conversorCtrl">
 	<div class="container">
 		<div class="page-header">
 			<h1>Conversor <small>AngularJS</small></h1>
@@ -39,7 +39,7 @@
 							<input 
 								name="millas"
 								class="form-control" 
-								ng-model="millas"
+								ng-model="conversorCtrl.millas"
 								required="true"
 								ng-pattern="/^[0-9]+$/"
 								placeholder="Ingrese la cantidad de millas a convertir"
@@ -48,10 +48,10 @@
 						<div class="form-group">
 							<label for="kilometros">Kilometros</label>
 							<p class="lead"
-								data-ng-show="convertirForm.millas.$valid">{{kilometros}}</p>
+								data-ng-show="convertirForm.millas.$valid">{{conversorCtrl.kilometros}}</p>
 						</div>
 						<button type="submit" class="btn btn-primary"
-							data-ng-click="convertir()">Convertir</button>
+							data-ng-click="conversorCtrl.convertir()">Convertir</button>
 
 						<div ng-show="convertirForm.millas.$dirty">Error:
 					      <span ng-show="convertirForm.millas.$error.required">Ingresar millas!</span>

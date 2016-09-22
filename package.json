@@ -3,6 +3,9 @@
   "description": "Conversor AngularJS + Play2",
   "author": "",
   "dependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4"
   }
 }

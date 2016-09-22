@@ -53,9 +53,13 @@
 						<button type="submit" class="btn btn-primary"
 							data-ng-click="conversorCtrl.convertir()">Convertir</button>
 
-						<div ng-show="convertirForm.millas.$dirty">Error:
+						<div ng-show="convertirForm.millas.$dirty && convertirForm.millas.$invalid">
+						<br>
+						<div class="alert alert-danger">
+						Error:
 					      <span ng-show="convertirForm.millas.$error.required">Ingresar millas!</span>
 					      <span ng-show="convertirForm.millas.$error.pattern">Formato debe ser numerico</span>
+					    </div>
 					  </div>
 					</fieldset>
 				</form>

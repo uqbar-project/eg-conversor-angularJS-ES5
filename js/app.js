@@ -1,14 +1,11 @@
-'use strict';
+(function() {
+    'use strict';
 
-var app = angular.module('conversorApp', []);
+    var app = angular.module('conversorApp', []);
 
-/* Controllers */
-app.controller('conversorCtrl', function() {
-    /* scope */
-    this.millas = 0;
-    this.kilometros = ' <ingrese millas> ';
+    /* Controllers */
+    app.controller('conversorCtrl', function() {
+        return new Conversor();
+    });
 
-    this.convertir = function() {
-        this.kilometros = this.millas * 1.60934;
-    };
-});
+}());
